@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandra Neres - Escritório de Advocacia</title>
+    <link rel="icon" type="image/x-icon" href="/assets/LOGO.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#e2b979',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-section {
+            min-height: 80vh
+        }
+
+        .nav-link {
+            position: relative
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #e2b979;
+            transition: width .3s
+        }
+
+        .nav-link:hover::after {
+            width: 100%
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-primary text-white shadow-lg fixed w-full z-10">
+        <div class="container mx-auto px-6 py-1">
+            <div class="flex justify-between items-center">
+
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="assets/LOGO.png" alt="Logo Sandra Neres Advocacia"
+                        class="h-20 w-auto scale-125 -my-1 mr-2">
+                </div>
+
+                <!-- Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="nav-link text-white hover:text-secondary">Início</a>
+                    <a href="#services" class="nav-link text-white hover:text-secondary">Serviços</a>
+                    <a href="#about" class="nav-link text-white hover:text-secondary">Sobre</a>
+                    <a href="#team" class="nav-link text-white hover:text-secondary">Equipe</a>
+                    <a href="#contact" class="nav-link text-white hover:text-secondary">Contato</a>
+                </div>
+
+                <!-- Menu mobile -->
+                <button class="md:hidden focus:outline-none" aria-label="Abrir menu">
+                    <i data-feather="menu" class="text-white"></i>
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO com imagem da estátua da justiça -->
+    <section class="hero-section relative pt-20">
+        <!-- imagem de fundo -->
+        <div class="absolute inset-0">
+            <img src="https://static.photos/legal/1200x630/10" alt="Estátua da Justiça"
+                class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 flex items-center min-h-[70vh]">
+            <div class="max-w-2xl">
+                <p class="tracking-widest uppercase font-semibold text-secondary mb-3">
+                    Bem-vindo(a)
+                </p>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Assistência jurídica
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 mb-8">
+                    Defendendo seus direitos com paixão.
+                </p>
+                <a href="#contact"
+                    class="inline-block bg-secondary hover:bg-yellow-600 text-primary font-bold py-3 px-8 rounded-lg transition">
+                    Agende uma Consulta
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEM-VINDO (logo abaixo da hero) -->
+    <section id="bem-vindo" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-6 text-left flex flex-col items-center">
+            <div class="max-w-4xl">
+                <p class="tracking-widest uppercase font-semibold text-secondary mb-3 text-center md:text-left">
+                    Bem-vindo à Sandra Neres Escritório de Advocacia
+                </p>
+
+                <h2 class="font-serif text-4xl md:text-5xl font-extrabold leading-tight text-slate-800 mb-4 text-left">
+                    Serviço jurídico de qualidade
+                </h2>
+
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mb-10 text-left">
+                    Nosso lema é uma advocacia humanitária e acessível, baseada na empatia,
+                    pessoalidade no atendimento, dedicação e satisfação do cliente.
+                </p>
+
+                <ul class="space-y-4 text-gray-700 mb-10 text-left">
+                    <li class="flex items-start">
+                        <i data-feather="check" class="w-5 h-5 mt-1 mr-3 text-secondary"></i>
+                        <span>Trabalho com profissionalismo e rapidez</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check" class="w-5 h-5 mt-1 mr-3 text-secondary"></i>
+                        <span>Advogada qualificada</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check" class="w-5 h-5 mt-1 mr-3 text-secondary"></i>
+                        <span>Compromisso com a satisfação do cliente</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check" class="w-5 h-5 mt-1 mr-3 text-secondary"></i>
+                        <span>Transparência, comprometimento, ética e seriedade.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check" class="w-5 h-5 mt-1 mr-3 text-secondary"></i>
+                        <span>Atendimento presencial em Blumenau e de forma online, para todas as regiões do
+                            Brasil</span>
+                    </li>
+                </ul>
+
+                <div
+                    class="border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-6">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-secondary/30 flex items-center justify-center mr-4">
+                            <i data-feather="award" class="w-6 h-6 text-secondary"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-2xl font-bold text-primary leading-none">+7 Anos</p>
+                            <p class="text-gray-600">Advogada experiente</p>
+                        </div>
+                    </div>
+
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-secondary text-primary hover:bg-yellow-600 transition">
+                        Faça uma consulta
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUE ESCOLHER -->
+    <section id="porque-escolher" class="relative py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-6">
+
+            <!-- ROW DE CARDS -->
+            <div class="relative z-20 grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <article class="bg-secondary text-white rounded-md shadow-xl p-8 md:p-10">
+                    <div class="mb-6">
+                        <i data-feather="handshake" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-3">Advocacia com Comprometimento</h3>
+                    <p class="text-white/90 leading-relaxed">
+                        Para que você tenha um advogado em quem possa confiar.
+                    </p>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="bg-white rounded-md shadow-xl p-8 md:p-10">
+                    <div class="mb-6 text-secondary">
+                        <i data-feather="award" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Advogados Qualificados</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Experiência consolidada em Direito Trabalhista, Previdenciário, Família,
+                        Empresarial e Consumidor.
+                    </p>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="bg-white rounded-md shadow-xl p-8 md:p-10">
+                    <div class="mb-6 text-secondary">
+                        <i data-feather="users" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Pessoa Física e Jurídica</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Atendimento à Pessoa Física e Assessoria Jurídica para empresas.
+                    </p>
+                </article>
+            </div>
+
+            <!-- CARD AZUL ATRÁS DOS OUTROS -->
+            <!-- CARD AZUL ATRÁS (com padding-top extra para não encobrir o texto) -->
+            <article
+                class="relative z-10 -mt-10 md:-mt-16 bg-primary text-white rounded-xl shadow-xl overflow-hidden px-8 md:px-12 pb-8 md:pb-12 pt-16 md:pt-20">
+                <div class="grid md:grid-cols-2 gap-10 items-start">
+                    <!-- Texto -->
+                    <div>
+                        <p class="tracking-widest uppercase text-secondary font-semibold mb-3">
+                            Por que nos escolher
+                        </p>
+                        <h2 class="font-serif text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                            Estamos comprometidos com a sua vitória
+                        </h2>
+                        <p class="text-white/90 leading-relaxed mb-4">
+                            Nós da <span class="font-semibold">Sandra Neres – Escritório de Advocacia</span> estamos
+                            comprometidos em garantir seus direitos. Nosso foco é resolver seus problemas jurídicos
+                            no menor tempo possível, com qualidade e segurança.
+                        </p>
+                        <p class="text-white/90 leading-relaxed mb-6">
+                            Atendemos Blumenau e região (Itajaí, Gaspar, Indaial, Pomerode, Brusque, Navegantes) e,
+                            de forma <span class="font-semibold">online</span>, todas as regiões do Brasil.
+                        </p>
+
+                        <a href="#contact"
+                            class="inline-flex items-center gap-2 bg-secondary text-primary font-semibold px-6 py-3 rounded-lg hover:bg-yellow-600 transition">
+                            Tire suas dúvidas com um advogado
+                            <i data-feather="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Métricas -->
+                    <div class="grid grid-cols-2 gap-10">
+                        <div class="flex flex-col items-center text-center">
+                            <i data-feather="award" class="w-10 h-10 text-secondary mb-3"></i>
+                            <p class="text-4xl font-extrabold">8+</p>
+                            <p class="text-white/80 mt-1">Anos de experiência</p>
+                        </div>
+
+                        <div class="flex flex-col items-center text-center">
+                            <i data-feather="headphones" class="w-10 h-10 text-secondary mb-3"></i>
+                            <p class="text-xl font-bold">Atendimento</p>
+                            <p class="text-white/80 mt-1">Presencial e Online</p>
+                        </div>
+
+                        <div class="flex flex-col items-center text-center">
+                            <i data-feather="file-text" class="w-10 h-10 text-secondary mb-3"></i>
+                            <p class="text-4xl font-extrabold">1800+</p>
+                            <p class="text-white/80 mt-1">Casos de sucesso</p>
+                        </div>
+
+                        <div class="flex flex-col items-center text-center">
+                            <i data-feather="smile" class="w-10 h-10 text-secondary mb-3"></i>
+                            <p class="text-4xl font-extrabold">2000+</p>
+                            <p class="text-white/80 mt-1">Clientes satisfeitos</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4">Nossos Serviços</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Direito Trabalhista -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div
+                        class="w-16 h-16 bg-primary text-secondary rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="shield" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-primary mb-4">Direito Trabalhista</h3>
+                    <p class="text-gray-600 text-center">
+                        Reversão da justa causa, acidentes de trabalho, vínculo de emprego, horas extras/noturnas;
+                        defesas e recursos trabalhistas.
+                    </p>
+                </div>
+
+                <!-- Direito de Família -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div
+                        class="w-16 h-16 bg-primary text-secondary rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-primary mb-4">Direito de Família</h3>
+                    <p class="text-gray-600 text-center">
+                        Divórcio, partilha de bens, guarda de filhos, pensão alimentícia, regime de visitas e dissolução
+                        de união estável.
+                    </p>
+                </div>
+
+                <!-- Direito Previdenciário -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div
+                        class="w-16 h-16 bg-primary text-secondary rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="clipboard" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-primary mb-4">Direito Previdenciário</h3>
+                    <p class="text-gray-600 text-center">
+                        Aposentadoria, auxílio-doença, LOAS/BPC, auxílio-acidente, salário-maternidade, revisão de
+                        benefícios e planejamento previdenciário.
+                    </p>
+                </div>
+
+                <!-- Direito Empresarial -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div
+                        class="w-16 h-16 bg-primary text-secondary rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="briefcase" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-primary mb-4">Direito Empresarial</h3>
+                    <p class="text-gray-600 text-center">
+                        Assessoria e consultoria jurídica para empresas. Atuação preventiva e contenciosa, contratos e
+                        governança.
+                    </p>
+                </div>
+
+                <!-- Direito do Consumidor -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div
+                        class="w-16 h-16 bg-primary text-secondary rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="shopping-cart" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-primary mb-4">Direito do Consumidor</h3>
+                    <p class="text-gray-600 text-center">
+                        Compras pela internet, serviços mal executados, financiamentos, passagens aéreas, cobranças
+                        indevidas e garantias.
+                    </p>
+                </div>
+
+                <!-- Direito Civil -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div
+                        class="w-16 h-16 bg-primary text-secondary rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="book-open" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-primary mb-4">Direito Civil</h3>
+                    <p class="text-gray-600 text-center">
+                        Danos morais e materiais, acidentes de trânsito, elaboração de contratos, inscrição indevida no
+                        Serasa e execuções cíveis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://static.photos/legal/1200x630/10" alt="Escritório de advocacia"
+                        class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Sobre Nós</h2>
+                    <p class="text-gray-600 mb-6">Sandra Neres é um escritório de advocacia comprometido com a
+                        excelência jurídica e a defesa intransigente dos direitos de nossos clientes.</p>
+                    <p class="text-gray-600 mb-6">Com uma equipe de profissionais altamente qualificados e
+                        especializados em diversas áreas do Direito, oferecemos soluções jurídicas personalizadas e
+                        eficientes.</p>
+                    <p class="text-gray-600 mb-8">Nossa missão é transformar desafios jurídicos em oportunidades de
+                        justiça, sempre com ética, transparência e comprometimento.</p>
+                    <a href="#contact"
+                        class="inline-block bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition">Saiba
+                        Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4">Nossa Equipe</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+
+            <!-- Centralizado -->
+            <div class="flex justify-center">
+                <div class="text-center">
+                    <img src="https://i.imgur.com/Zu8VeJk.jpeg" alt="Advogado"
+                        class="w-64 h-64 object-cover rounded-full mx-auto mb-6 shadow-md">
+                    <h3 class="text-xl font-bold text-primary mb-2">Dra. Sandra Neres</h3>
+                    <p class="text-secondary mb-4">Fundadora</p>
+                    <p class="text-gray-600 max-w-md mx-auto">
+                        Especialista em Direito de Família com mais de 8 anos de experiência.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Carrossel) -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-primary mb-4">Depoimentos</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+
+                <!-- Wrapper do carrossel -->
+                <div id="carousel-track" class="overflow-hidden rounded-xl shadow-md bg-white" aria-live="polite">
+                    <div class="flex transition-transform duration-500 ease-out" style="transform: translateX(0%);">
+
+                        <!-- Slide 1 -->
+                        <article class="min-w-full p-8">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pravatar.cc/100?img=12" alt="Cliente"
+                                    class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-primary">Mariana Oliveira</h4>
+                                    <p class="text-gray-500 text-sm">Empresária</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                “A equipe conduziu meu caso com tranquilidade e clareza em cada etapa.
+                                Atendimento humano e resultado excelente.”
+                            </p>
+                        </article>
+
+                        <!-- Slide 2 -->
+                        <article class="min-w-full p-8">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pravatar.cc/100?img=32" alt="Cliente"
+                                    class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-primary">João Santos</h4>
+                                    <p class="text-gray-500 text-sm">Executivo</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                “Atuação técnica e ágil. Resolveram um contrato complexo da minha empresa sem
+                                burocracia e dentro do prazo.”
+                            </p>
+                        </article>
+
+                        <!-- Slide 3 -->
+                        <article class="min-w-full p-8">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pravatar.cc/100?img=5" alt="Cliente"
+                                    class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-primary">Beatriz Lima</h4>
+                                    <p class="text-gray-500 text-sm">Designer</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                “Fui muito bem orientada no processo de família. Sensibilidade e firmeza nas audiências.
+                                Recomendo sem hesitar.”
+                            </p>
+                        </article>
+
+                        <!-- Slide 4 -->
+                        <article class="min-w-full p-8">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pravatar.cc/100?img=21" alt="Cliente"
+                                    class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-primary">Carlos Andrade</h4>
+                                    <p class="text-gray-500 text-sm">Engenheiro</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                “Excelente atuação em ação previdenciária. Comunicação clara e acompanhamento
+                                constante.”
+                            </p>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- Controles -->
+                <button id="prevBtn" aria-label="Anterior"
+                    class="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 bg-white text-primary border border-gray-200 hover:bg-gray-100 rounded-full w-10 h-10 items-center justify-center shadow">
+                    ‹
+                </button>
+                <button id="nextBtn" aria-label="Próximo"
+                    class="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 bg-white text-primary border border-gray-200 hover:bg-gray-100 rounded-full w-10 h-10 items-center justify-center shadow">
+                    ›
+                </button>
+
+                <!-- Dots -->
+                <div id="dots" class="flex items-center justify-center gap-2 mt-6">
+                    <!-- preenchidos via JS -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+            (function () {
+                const track = document.querySelector('#carousel-track > div');
+                const slides = Array.from(track.children);
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                const dotsContainer = document.getElementById('dots');
+                const wrapper = document.getElementById('carousel-track');
+
+                let index = 0;
+                const total = slides.length;
+                const autoplayMs = 5000;
+                let timer = null;
+
+                // cria dots
+                slides.forEach((_, i) => {
+                    const b = document.createElement('button');
+                    b.className = 'w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-secondary transition';
+                    b.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
+                    b.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(b);
+                });
+
+                function updateDots() {
+                    dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+                        dot.className =
+                            'w-2.5 h-2.5 rounded-full transition ' +
+                            (i === index ? 'bg-secondary' : 'bg-gray-300 hover:bg-secondary');
+                    });
+                }
+
+                function goTo(i) {
+                    index = (i + total) % total;
+                    const percent = -(100 * index);
+                    track.style.transform = `translateX(${percent}%)`;
+                    updateDots();
+                    restartAutoplay();
+                }
+
+                function next() { goTo(index + 1); }
+                function prev() { goTo(index - 1); }
+
+                nextBtn?.addEventListener('click', next);
+                prevBtn?.addEventListener('click', prev);
+
+                // autoplay
+                function startAutoplay() {
+                    timer = setInterval(next, autoplayMs);
+                }
+                function stopAutoplay() {
+                    if (timer) clearInterval(timer);
+                    timer = null;
+                }
+                function restartAutoplay() {
+                    stopAutoplay();
+                    startAutoplay();
+                }
+
+                // pausa no hover
+                wrapper.addEventListener('mouseenter', stopAutoplay);
+                wrapper.addEventListener('mouseleave', startAutoplay);
+
+                // iniciar
+                updateDots();
+                startAutoplay();
+
+                // acessibilidade via teclado
+                wrapper.tabIndex = 0;
+                wrapper.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight') next();
+                    if (e.key === 'ArrowLeft') prev();
+                });
+
+                // responsivo: garante posição correta em mudanças rápidas
+                window.addEventListener('resize', () => goTo(index));
+            })();
+    </script>
+
+    <!-- BLOG / ÚLTIMAS NOTÍCIAS -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <p class="tracking-widest uppercase text-secondary font-semibold">Saiba mais sobre seus direitos</p>
+                <h2 class="mt-2 text-4xl md:text-5xl font-extrabold text-slate-800">Confira nossas últimas notícias</h2>
+                <p class="mt-4 text-gray-600">
+                    Aproveite para se informar sobre seus direitos. Não achou o que procurava?
+                    Fale com nossa equipe. Será um prazer te ajudar!
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Botões -->
+                <button id="blogPrev"
+                    class="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border border-gray-200 shadow hover:bg-gray-50 items-center justify-center"
+                    aria-label="Anterior">‹</button>
+                <button id="blogNext"
+                    class="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border border-gray-200 shadow hover:bg-gray-50 items-center justify-center"
+                    aria-label="Próximo">›</button>
+
+                <!-- Track (carrossel) -->
+                <div id="blogTrack"
+                    class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-2 no-scrollbar">
+                    <!-- Card 1 -->
+                    <article
+                        class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="relative h-52">
+                            <img src="https://images.unsplash.com/photo-1505666287802-931dc83948e2?q=80&w=1600&auto=format&fit=crop"
+                                alt="Direito de Família" class="w-full h-full object-cover">
+                            <span
+                                class="absolute top-3 right-3 bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
+                                Direito de Família
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">O que fazer para se divorciar?</h3>
+                            <p class="text-gray-600">
+                                Passo a passo para iniciar o divórcio, documentos, prazos e como garantir seus direitos.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article
+                        class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="relative h-52">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop"
+                                alt="Direito do Trabalho" class="w-full h-full object-cover">
+                            <span
+                                class="absolute top-3 right-3 bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
+                                Direito do Trabalho
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Como funciona a demissão acordada?
+                            </h3>
+                            <p class="text-gray-600">
+                                Entenda vantagens, pagamentos e cuidados ao optar pela rescisão de comum acordo.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article
+                        class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="relative h-52">
+                            <img src="https://images.unsplash.com/photo-1490111718993-d98654ce6cf7?q=80&w=1600&auto=format&fit=crop"
+                                alt="Direito Previdenciário" class="w-full h-full object-cover">
+                            <span
+                                class="absolute top-3 right-3 bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
+                                Direito Previdenciário
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Auxílio-doença negado. E agora?</h3>
+                            <p class="text-gray-600">
+                                Veja o que fazer quando o INSS indeferir seu pedido e como preparar o recurso.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article
+                        class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="relative h-52">
+                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop"
+                                alt="Direito Civil" class="w-full h-full object-cover">
+                            <span
+                                class="absolute top-3 right-3 bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
+                                Direito Civil
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Inscrição indevida no Serasa</h3>
+                            <p class="text-gray-600">
+                                Quando cabe indenização por dano moral e como solicitar a retirada do seu nome.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article
+                        class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="relative h-52">
+                            <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=1600&auto=format&fit=crop"
+                                alt="Direito do Consumidor" class="w-full h-full object-cover">
+                            <span
+                                class="absolute top-3 right-3 bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
+                                Direito do Consumidor
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Passagem aérea cancelada</h3>
+                            <p class="text-gray-600">
+                                Reembolso, remarcação e seus direitos em atrasos e cancelamentos de voos.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article
+                        class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="relative h-52">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop"
+                                alt="Direito Empresarial" class="w-full h-full object-cover">
+                            <span
+                                class="absolute top-3 right-3 bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
+                                Direito Empresarial
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Contrato de prestação de serviços
+                            </h3>
+                            <p class="text-gray-600">
+                                Cláusulas essenciais para evitar riscos e litígios no seu negócio.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- utilitário para ocultar a barra de rolagem horizontal -->
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <script>
+        // Carrossel do Blog: rolagem por cartão, mantendo 3 visíveis no desktop
+        (function () {
+            const track = document.getElementById('blogTrack');
+            const prev = document.getElementById('blogPrev');
+            const next = document.getElementById('blogNext');
+
+            function getStep() {
+                // usa a largura do primeiro card + gap (aprox) como passo
+                const firstCard = track.querySelector('.blog-card');
+                if (!firstCard) return track.clientWidth;
+                const style = getComputedStyle(track);
+                const gap = parseInt(style.columnGap || style.gap || 24, 10);
+                return firstCard.getBoundingClientRect().width + gap;
+            }
+
+            function go(dir = 1) {
+                track.scrollBy({ left: getStep() * dir, behavior: 'smooth' });
+            }
+
+            prev?.addEventListener('click', () => go(-1));
+            next?.addEventListener('click', () => go(1));
+
+            // Arraste/touch para mobile (inércia suave)
+            let isDown = false, startX = 0, scrollLeft = 0;
+            track.addEventListener('mousedown', (e) => {
+                isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft;
+                track.classList.add('cursor-grabbing');
+            });
+            track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('cursor-grabbing'); });
+            track.addEventListener('mouseup', () => { isDown = false; track.classList.remove('cursor-grabbing'); });
+            track.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - track.offsetLeft;
+                const walk = (x - startX) * 1.2;
+                track.scrollLeft = scrollLeft - walk;
+            });
+        })();
+    </script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Entre em Contato</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Informações de Contato</h3>
+                    <div class="flex items-start mb-6">
+                        <i data-feather="map-pin" class="mr-4 mt-1"></i>
+                        <p>Av. Paulista, 1000 - São Paulo/SP</p>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <i data-feather="phone" class="mr-4"></i>
+                        <p>(11) 9999-9999</p>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <i data-feather="mail" class="mr-4"></i>
+                        <p>contato@legaleaglenest.com.br</p>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <i data-feather="clock" class="mr-4"></i>
+                        <p>Segunda a Sexta: 09h às 18h</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition"
+                            aria-label="Facebook">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition"
+                            aria-label="LinkedIn">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition"
+                            aria-label="Instagram">
+                            <i data-feather="instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <form>
+                        <div class="mb-4">
+                            <input type="text" placeholder="Seu Nome"
+                                class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" placeholder="Seu Email"
+                                class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" placeholder="Seu Telefone"
+                                class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <textarea placeholder="Sua Mensagem" rows="4"
+                                class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-secondary hover:bg-yellow-600 text-primary font-bold py-3 px-8 rounded-lg transition">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-3">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+
+                <!-- Logo (esquerda) -->
+                <div class="flex items-center justify-center md:justify-start mb-4 md:mb-0 w-full md:w-1/3">
+                    <img src="assets/LOGO.png" alt="Logo Sandra Neres Escritório de Advocacia"
+                        class="h-16 w-auto scale-125">
+                </div>
+
+                <!-- Direitos autorais (centro) -->
+                <div class="w-full md:w-1/3 mb-4 md:mb-0">
+                    <p class="text-gray-400 text-center">
+                        © 2025 Sandra Neres - Escritório de Advocacia. Todos os direitos reservados.
+                    </p>
+                </div>
+
+                <!-- Desenvolvido por (direita) -->
+                <div class="w-full md:w-1/3 flex justify-center md:justify-end">
+                    <p class="text-gray-400 text-sm">
+                        Desenvolvido por
+                        <a href="https://wa.me/5547996348990?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Sandra%20Neres%20Escrit%C3%B3rio%20de%20Advocacia%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento"
+                            class="text-secondary hover:underline font-semibold" target="_blank"
+                            rel="noopener noreferrer">
+                            William Koerich
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Feather
+        feather.replace();
+    </script>
+</body>
+
+</html>
