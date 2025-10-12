@@ -13,7 +13,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1a365d',
+                        primary: '#2e2e2e',
                         secondary: '#e2b979',
                     }
                 }
@@ -48,7 +48,7 @@
 
 <body class="bg-gray-50 font-sans">
     <!-- Navigation -->
-    <nav class="bg-primary text-white shadow-lg fixed w-full z-10">
+    <nav class="bg-primary text-white shadow-lg fixed w-full z-50">
         <div class="container mx-auto px-6 py-1">
             <div class="flex justify-between items-center">
 
@@ -65,6 +65,7 @@
                     <a href="#about" class="nav-link text-white hover:text-secondary">Sobre</a>
                     <a href="#team" class="nav-link text-white hover:text-secondary">Equipe</a>
                     <a href="#contact" class="nav-link text-white hover:text-secondary">Contato</a>
+                    <a href="#blog" class="nav-link text-white hover:text-secondary">Blog</a>
                 </div>
 
                 <!-- Menu mobile -->
@@ -399,6 +400,7 @@
                     <img src="https://i.imgur.com/Zu8VeJk.jpeg" alt="Advogado"
                         class="w-64 h-64 object-cover rounded-full mx-auto mb-6 shadow-md">
                     <h3 class="text-xl font-bold text-primary mb-2">Dra. Sandra Neres</h3>
+                    <p class="text-xl text-primary mb-2">OAB/SC 52.219</p>
                     <p class="text-secondary mb-4">Fundadora</p>
                     <p class="text-gray-600 max-w-md mx-auto">
                         Especialista em Direito de Família com mais de 8 anos de experiência.
@@ -612,7 +614,8 @@
                 <div id="blogTrack"
                     class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-2 no-scrollbar">
                     <!-- Card 1 -->
-                    <article
+                    <a
+                        href="artigos/oque-fazer-para-se-divorciar.html"
                         class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
                         <div class="relative h-52">
                             <img src="https://images.unsplash.com/photo-1505666287802-931dc83948e2?q=80&w=1600&auto=format&fit=crop"
@@ -628,7 +631,7 @@
                                 Passo a passo para iniciar o divórcio, documentos, prazos e como garantir seus direitos.
                             </p>
                         </div>
-                    </article>
+                    </a>
 
                     <!-- Card 2 -->
                     <article
@@ -785,92 +788,50 @@
     </script>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-primary text-white">
+    <section id="contact" class="py-20 bg-white text-center">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">Entre em Contato</h2>
-                <div class="w-24 h-1 bg-secondary mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div>
-                    <h3 class="text-xl font-bold mb-6">Informações de Contato</h3>
-                    <div class="flex items-start mb-6">
-                        <i data-feather="map-pin" class="mr-4 mt-1"></i>
-                        <p>Av. Paulista, 1000 - São Paulo/SP</p>
-                    </div>
-                    <div class="flex items-center mb-6">
-                        <i data-feather="phone" class="mr-4"></i>
-                        <p>(11) 9999-9999</p>
-                    </div>
-                    <div class="flex items-center mb-6">
-                        <i data-feather="mail" class="mr-4"></i>
-                        <p>contato@legaleaglenest.com.br</p>
-                    </div>
-                    <div class="flex items-center mb-6">
-                        <i data-feather="clock" class="mr-4"></i>
-                        <p>Segunda a Sexta: 09h às 18h</p>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#"
-                            class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition"
-                            aria-label="Facebook">
-                            <i data-feather="facebook"></i>
-                        </a>
-                        <a href="#"
-                            class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition"
-                            aria-label="LinkedIn">
-                            <i data-feather="linkedin"></i>
-                        </a>
-                        <a href="#"
-                            class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary transition"
-                            aria-label="Instagram">
-                            <i data-feather="instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <form>
-                        <div class="mb-4">
-                            <input type="text" placeholder="Seu Nome"
-                                class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
-                        </div>
-                        <div class="mb-4">
-                            <input type="email" placeholder="Seu Email"
-                                class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
-                        </div>
-                        <div class="mb-4">
-                            <input type="tel" placeholder="Seu Telefone"
-                                class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
-                        </div>
-                        <div class="mb-6">
-                            <textarea placeholder="Sua Mensagem" rows="4"
-                                class="w-full bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg py-3 px-4 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"></textarea>
-                        </div>
-                        <button type="submit"
-                            class="w-full bg-secondary hover:bg-yellow-600 text-primary font-bold py-3 px-8 rounded-lg transition">
-                            Enviar Mensagem
-                        </button>
-                    </form>
-                </div>
-            </div>
+
+            <!-- Título -->
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+                Entre em Contato Conosco
+            </h2>
+            <div class="w-24 h-1 bg-secondary mx-auto mb-8"></div>
+
+            <!-- Texto -->
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Tem dúvidas ou precisa de orientação jurídica?
+                Nossa equipe está pronta para ajudar você.
+                Fale agora com um advogado pelo WhatsApp.
+            </p>
+
+            <!-- Botão WhatsApp -->
+            <a href="https://wa.me/5547996348990?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Escrit%C3%B3rio%20Sandra%20Neres."
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-3 bg-secondary text-primary font-bold px-8 py-4 rounded-lg hover:bg-yellow-600 transition shadow-lg">
+                <i data-feather="message-circle" class="w-5 h-5"></i>
+                Falar pelo WhatsApp
+            </a>
+
         </div>
     </section>
 
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-3">
+    <footer class="bg-primary text-white py-6">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
 
                 <!-- Logo (esquerda) -->
                 <div class="flex items-center justify-center md:justify-start mb-4 md:mb-0 w-full md:w-1/3">
                     <img src="assets/LOGO.png" alt="Logo Sandra Neres Escritório de Advocacia"
-                        class="h-16 w-auto scale-125">
+                        class="h-16 w-auto scale-125 brightness-110">
                 </div>
 
                 <!-- Direitos autorais (centro) -->
                 <div class="w-full md:w-1/3 mb-4 md:mb-0">
-                    <p class="text-gray-400 text-center">
-                        © 2025 Sandra Neres - Escritório de Advocacia. Todos os direitos reservados.
+                    <p class="text-gray-300 text-center text-sm md:text-base">
+                        © 2025 <span class="font-semibold text-white">Sandra Neres - Escritório de Advocacia</span>.
+                        Todos os direitos reservados.
                     </p>
                 </div>
 
@@ -879,7 +840,7 @@
                     <p class="text-gray-400 text-sm">
                         Desenvolvido por
                         <a href="https://wa.me/5547996348990?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Sandra%20Neres%20Escrit%C3%B3rio%20de%20Advocacia%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento"
-                            class="text-secondary hover:underline font-semibold" target="_blank"
+                            class="text-secondary hover:text-yellow-500 transition font-semibold" target="_blank"
                             rel="noopener noreferrer">
                             William Koerich
                         </a>
