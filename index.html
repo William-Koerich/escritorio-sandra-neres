@@ -511,82 +511,140 @@
     </section>
 
     <script>
-            (function () {
-                const track = document.querySelector('#carousel-track > div');
-                const slides = Array.from(track.children);
-                const prevBtn = document.getElementById('prevBtn');
-                const nextBtn = document.getElementById('nextBtn');
-                const dotsContainer = document.getElementById('dots');
-                const wrapper = document.getElementById('carousel-track');
+  (function () {
+    const track = document.querySelector('#carousel-track > div');
+    const slides = Array.from(track.children);
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('dots');
+    const wrapper = document.getElementById('carousel-track');
 
-                let index = 0;
-                const total = slides.length;
-                const autoplayMs = 5000;
-                let timer = null;
+    let index = 0;
+    const total = slides.length;
+    const autoplayMs = 5000;
+    let timer = null;
 
-                // cria dots
-                slides.forEach((_, i) => {
-                    const b = document.createElement('button');
-                    b.className = 'w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-secondary transition';
-                    b.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
-                    b.addEventListener('click', () => goTo(i));
-                    dotsContainer.appendChild(b);
-                });
+    // ---- Dots ----
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.className = 'w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-secondary transition';
+      b.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
+      b.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(b);
+    });
 
-                function updateDots() {
-                    dotsContainer.querySelectorAll('button').forEach((dot, i) => {
-                        dot.className =
-                            'w-2.5 h-2.5 rounded-full transition ' +
-                            (i === index ? 'bg-secondary' : 'bg-gray-300 hover:bg-secondary');
-                    });
-                }
+    function updateDots() {
+      dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+        dot.className =
+          'w-2.5 h-2.5 rounded-full transition ' +
+          (i === index ? 'bg-secondary' : 'bg-gray-300 hover:bg-secondary');
+      });
+    }
 
-                function goTo(i) {
-                    index = (i + total) % total;
-                    const percent = -(100 * index);
-                    track.style.transform = `translateX(${percent}%)`;
-                    updateDots();
-                    restartAutoplay();
-                }
+    function slideWidth() {
+      return wrapper.clientWidth; // largura visível do slide
+    }
 
-                function next() { goTo(index + 1); }
-                function prev() { goTo(index - 1); }
+    function setTranslate(px) {
+      track.style.transform = `translateX(${px}px)`;
+    }
 
-                nextBtn?.addEventListener('click', next);
-                prevBtn?.addEventListener('click', prev);
+    function goTo(i, useAnim = true) {
+      index = (i + total) % total;
+      const px = -(slideWidth() * index);
+      if (useAnim) {
+        track.style.transition = 'transform 0.5s ease-out';
+      }
+      setTranslate(px);
+      updateDots();
+      restartAutoplay();
+    }
 
-                // autoplay
-                function startAutoplay() {
-                    timer = setInterval(next, autoplayMs);
-                }
-                function stopAutoplay() {
-                    if (timer) clearInterval(timer);
-                    timer = null;
-                }
-                function restartAutoplay() {
-                    stopAutoplay();
-                    startAutoplay();
-                }
+    function next() { goTo(index + 1); }
+    function prev() { goTo(index - 1); }
 
-                // pausa no hover
-                wrapper.addEventListener('mouseenter', stopAutoplay);
-                wrapper.addEventListener('mouseleave', startAutoplay);
+    nextBtn?.addEventListener('click', next);
+    prevBtn?.addEventListener('click', prev);
 
-                // iniciar
-                updateDots();
-                startAutoplay();
+    // ---- Autoplay ----
+    function startAutoplay() {
+      stopAutoplay();
+      timer = setInterval(next, autoplayMs);
+    }
+    function stopAutoplay() {
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
 
-                // acessibilidade via teclado
-                wrapper.tabIndex = 0;
-                wrapper.addEventListener('keydown', (e) => {
-                    if (e.key === 'ArrowRight') next();
-                    if (e.key === 'ArrowLeft') prev();
-                });
+    wrapper.addEventListener('mouseenter', stopAutoplay);
+    wrapper.addEventListener('mouseleave', startAutoplay);
 
-                // responsivo: garante posição correta em mudanças rápidas
-                window.addEventListener('resize', () => goTo(index));
-            })();
-    </script>
+    // ---- Swipe / Drag ----
+    let dragging = false;
+    let startX = 0;
+    let startTranslate = 0;
+    let deltaX = 0;
+    const THRESHOLD = 60; // px para trocar de slide
+
+    function onStart(x) {
+      dragging = true;
+      track.style.transition = 'none';
+      startX = x;
+      startTranslate = -(slideWidth() * index);
+      deltaX = 0;
+      stopAutoplay();
+    }
+
+    function onMove(x) {
+      if (!dragging) return;
+      deltaX = x - startX;
+      setTranslate(startTranslate + deltaX);
+    }
+
+    function onEnd() {
+      if (!dragging) return;
+      dragging = false;
+      track.style.transition = 'transform 0.5s ease-out';
+
+      if (Math.abs(deltaX) > THRESHOLD) {
+        if (deltaX < 0) next(); else prev();
+      } else {
+        // volta para a posição original
+        goTo(index);
+      }
+    }
+
+    // Touch
+    wrapper.addEventListener('touchstart', (e) => onStart(e.touches[0].clientX), { passive: true });
+    wrapper.addEventListener('touchmove', (e) => onMove(e.touches[0].clientX), { passive: true });
+    wrapper.addEventListener('touchend', onEnd, { passive: true });
+    wrapper.addEventListener('touchcancel', onEnd, { passive: true });
+
+    // Mouse (arraste no desktop)
+    wrapper.addEventListener('mousedown', (e) => { e.preventDefault(); onStart(e.clientX); });
+    window.addEventListener('mousemove', (e) => onMove(e.clientX));
+    window.addEventListener('mouseup', onEnd);
+
+    // ---- Teclado ----
+    wrapper.tabIndex = 0;
+    wrapper.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    });
+
+    // ---- Init ----
+    updateDots();
+    goTo(0, false); // posiciona sem animação
+    startAutoplay();
+
+    // Responsivo: reposiciona no resize
+    window.addEventListener('resize', () => goTo(index, false));
+  })();
+</script>
 
     <!-- BLOG / ÚLTIMAS NOTÍCIAS -->
     <section id="blog" class="py-20 bg-white">
@@ -823,7 +881,7 @@
 
                 <!-- Logo (esquerda) -->
                 <div class="flex items-center justify-center md:justify-start mb-4 md:mb-0 w-full md:w-1/3">
-                    <img src="assets/LOGO.png" alt="Logo Sandra Neres Escritório de Advocacia"
+                    <img src="./assets/LOGO.png" alt="Logo Sandra Neres Escritório de Advocacia"
                         class="h-16 w-auto scale-125 brightness-110">
                 </div>
 
