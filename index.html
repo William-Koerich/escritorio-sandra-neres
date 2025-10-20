@@ -192,7 +192,8 @@
                     </div>
                     <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Advogados Qualificados</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        Direito Previdenciário, Família e sucessões, Civil, Imobiliário, Trabalhista, Penal, Regularização de INSS de obras.
+                        Direito Previdenciário, Família e sucessões, Civil, Imobiliário, Trabalhista, Penal,
+                        Regularização de INSS de obras.
                     </p>
                 </article>
 
@@ -339,7 +340,8 @@
                     </div>
                     <h3 class="text-xl font-bold text-center text-primary mb-4">Direito Penal</h3>
                     <p class="text-gray-600 text-center">
-                        Parcerias com especialistas que atuam no juizado especial, justiça comum criminal, Tribunal do júri, acompanhamento em órgãos públicos e audiências.
+                        Parcerias com especialistas que atuam no juizado especial, justiça comum criminal, Tribunal do
+                        júri, acompanhamento em órgãos públicos e audiências.
                     </p>
                 </div>
 
@@ -364,7 +366,9 @@
                     </div>
                     <h3 class="text-xl font-bold text-center text-primary mb-4">Regularização de INSS de obras</h3>
                     <p class="text-gray-600 text-center">
-                        Realização de planejamento tributário, cadastro de CNO, diminuição de INSS de obras através de estratégicas jurídicas e tributárias sem risco de sofrer processos civis e penais, retirada de guias de CND, averbação em cartório.
+                        Realização de planejamento tributário, cadastro de CNO, diminuição de INSS de obras através de
+                        estratégicas jurídicas e tributárias sem risco de sofrer processos civis e penais, retirada de
+                        guias de CND, averbação em cartório.
                     </p>
                 </div>
             </div>
@@ -443,8 +447,9 @@
                                 </div>
                             </div>
                             <p class="text-gray-700 leading-relaxed">
-                                “Sandra advoga pra mim a mais de 6 anos 
-                                Ótima profissional, dedicada, educada, busca de todas as formas nos apoiar em diversos casos, não troco por nada!”
+                                “Sandra advoga pra mim a mais de 6 anos
+                                Ótima profissional, dedicada, educada, busca de todas as formas nos apoiar em diversos
+                                casos, não troco por nada!”
                             </p>
                         </article>
 
@@ -457,9 +462,13 @@
                             </div>
                             <p class="text-gray-700 leading-relaxed">
                                 “Gratidão e Reconhecimento à Dra. Sandra
-                                    Quero expressar minha profunda gratidão à Dra. Sandra pelo trabalho excepcional na condução do meu processo de aposentadoria. Com competência, agilidade e um olhar atento a cada detalhe, ela conseguiu transformar o que costuma ser um caminho longo e burocrático em uma conquista rápida e tranquila.
-                                    Sua dedicação, clareza nas orientações e comprometimento com o resultado fizeram toda a diferença. É raro encontrar uma profissional tão eficiente e humana ao mesmo tempo.
-                                    Muito obrigado, Dra. Sandra, por tornar esse momento tão especial ainda mais memorável!”
+                                Quero expressar minha profunda gratidão à Dra. Sandra pelo trabalho excepcional na
+                                condução do meu processo de aposentadoria. Com competência, agilidade e um olhar atento
+                                a cada detalhe, ela conseguiu transformar o que costuma ser um caminho longo e
+                                burocrático em uma conquista rápida e tranquila.
+                                Sua dedicação, clareza nas orientações e comprometimento com o resultado fizeram toda a
+                                diferença. É raro encontrar uma profissional tão eficiente e humana ao mesmo tempo.
+                                Muito obrigado, Dra. Sandra, por tornar esse momento tão especial ainda mais memorável!”
                             </p>
                         </article>
 
@@ -471,7 +480,9 @@
                                 </div>
                             </div>
                             <p class="text-gray-700 leading-relaxed">
-                                “Dra. Sandra foi muito prestativa durante o meu período de separação. Me ajudou com toda a documentação necessária e tirou todas as minhas dúvidas! Processo rápido, seguro e confiável! Obrigada Dra. Sandra! Recomendo e indico sempre!”
+                                “Dra. Sandra foi muito prestativa durante o meu período de separação. Me ajudou com toda
+                                a documentação necessária e tirou todas as minhas dúvidas! Processo rápido, seguro e
+                                confiável! Obrigada Dra. Sandra! Recomendo e indico sempre!”
                             </p>
                         </article>
                     </div>
@@ -497,140 +508,140 @@
     </section>
 
     <script>
-  (function () {
-    const track = document.querySelector('#carousel-track > div');
-    const slides = Array.from(track.children);
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dotsContainer = document.getElementById('dots');
-    const wrapper = document.getElementById('carousel-track');
+            (function () {
+                const track = document.querySelector('#carousel-track > div');
+                const slides = Array.from(track.children);
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                const dotsContainer = document.getElementById('dots');
+                const wrapper = document.getElementById('carousel-track');
 
-    let index = 0;
-    const total = slides.length;
-    const autoplayMs = 5000;
-    let timer = null;
+                let index = 0;
+                const total = slides.length;
+                const autoplayMs = 5000;
+                let timer = null;
 
-    // ---- Dots ----
-    slides.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.className = 'w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-secondary transition';
-      b.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
-      b.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(b);
-    });
+                // ---- Dots ----
+                slides.forEach((_, i) => {
+                    const b = document.createElement('button');
+                    b.className = 'w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-secondary transition';
+                    b.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
+                    b.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(b);
+                });
 
-    function updateDots() {
-      dotsContainer.querySelectorAll('button').forEach((dot, i) => {
-        dot.className =
-          'w-2.5 h-2.5 rounded-full transition ' +
-          (i === index ? 'bg-secondary' : 'bg-gray-300 hover:bg-secondary');
-      });
-    }
+                function updateDots() {
+                    dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+                        dot.className =
+                            'w-2.5 h-2.5 rounded-full transition ' +
+                            (i === index ? 'bg-secondary' : 'bg-gray-300 hover:bg-secondary');
+                    });
+                }
 
-    function slideWidth() {
-      return wrapper.clientWidth; // largura visível do slide
-    }
+                function slideWidth() {
+                    return wrapper.clientWidth; // largura visível do slide
+                }
 
-    function setTranslate(px) {
-      track.style.transform = `translateX(${px}px)`;
-    }
+                function setTranslate(px) {
+                    track.style.transform = `translateX(${px}px)`;
+                }
 
-    function goTo(i, useAnim = true) {
-      index = (i + total) % total;
-      const px = -(slideWidth() * index);
-      if (useAnim) {
-        track.style.transition = 'transform 0.5s ease-out';
-      }
-      setTranslate(px);
-      updateDots();
-      restartAutoplay();
-    }
+                function goTo(i, useAnim = true) {
+                    index = (i + total) % total;
+                    const px = -(slideWidth() * index);
+                    if (useAnim) {
+                        track.style.transition = 'transform 0.5s ease-out';
+                    }
+                    setTranslate(px);
+                    updateDots();
+                    restartAutoplay();
+                }
 
-    function next() { goTo(index + 1); }
-    function prev() { goTo(index - 1); }
+                function next() { goTo(index + 1); }
+                function prev() { goTo(index - 1); }
 
-    nextBtn?.addEventListener('click', next);
-    prevBtn?.addEventListener('click', prev);
+                nextBtn?.addEventListener('click', next);
+                prevBtn?.addEventListener('click', prev);
 
-    // ---- Autoplay ----
-    function startAutoplay() {
-      stopAutoplay();
-      timer = setInterval(next, autoplayMs);
-    }
-    function stopAutoplay() {
-      if (timer) clearInterval(timer);
-      timer = null;
-    }
-    function restartAutoplay() {
-      stopAutoplay();
-      startAutoplay();
-    }
+                // ---- Autoplay ----
+                function startAutoplay() {
+                    stopAutoplay();
+                    timer = setInterval(next, autoplayMs);
+                }
+                function stopAutoplay() {
+                    if (timer) clearInterval(timer);
+                    timer = null;
+                }
+                function restartAutoplay() {
+                    stopAutoplay();
+                    startAutoplay();
+                }
 
-    wrapper.addEventListener('mouseenter', stopAutoplay);
-    wrapper.addEventListener('mouseleave', startAutoplay);
+                wrapper.addEventListener('mouseenter', stopAutoplay);
+                wrapper.addEventListener('mouseleave', startAutoplay);
 
-    // ---- Swipe / Drag ----
-    let dragging = false;
-    let startX = 0;
-    let startTranslate = 0;
-    let deltaX = 0;
-    const THRESHOLD = 60; // px para trocar de slide
+                // ---- Swipe / Drag ----
+                let dragging = false;
+                let startX = 0;
+                let startTranslate = 0;
+                let deltaX = 0;
+                const THRESHOLD = 60; // px para trocar de slide
 
-    function onStart(x) {
-      dragging = true;
-      track.style.transition = 'none';
-      startX = x;
-      startTranslate = -(slideWidth() * index);
-      deltaX = 0;
-      stopAutoplay();
-    }
+                function onStart(x) {
+                    dragging = true;
+                    track.style.transition = 'none';
+                    startX = x;
+                    startTranslate = -(slideWidth() * index);
+                    deltaX = 0;
+                    stopAutoplay();
+                }
 
-    function onMove(x) {
-      if (!dragging) return;
-      deltaX = x - startX;
-      setTranslate(startTranslate + deltaX);
-    }
+                function onMove(x) {
+                    if (!dragging) return;
+                    deltaX = x - startX;
+                    setTranslate(startTranslate + deltaX);
+                }
 
-    function onEnd() {
-      if (!dragging) return;
-      dragging = false;
-      track.style.transition = 'transform 0.5s ease-out';
+                function onEnd() {
+                    if (!dragging) return;
+                    dragging = false;
+                    track.style.transition = 'transform 0.5s ease-out';
 
-      if (Math.abs(deltaX) > THRESHOLD) {
-        if (deltaX < 0) next(); else prev();
-      } else {
-        // volta para a posição original
-        goTo(index);
-      }
-    }
+                    if (Math.abs(deltaX) > THRESHOLD) {
+                        if (deltaX < 0) next(); else prev();
+                    } else {
+                        // volta para a posição original
+                        goTo(index);
+                    }
+                }
 
-    // Touch
-    wrapper.addEventListener('touchstart', (e) => onStart(e.touches[0].clientX), { passive: true });
-    wrapper.addEventListener('touchmove', (e) => onMove(e.touches[0].clientX), { passive: true });
-    wrapper.addEventListener('touchend', onEnd, { passive: true });
-    wrapper.addEventListener('touchcancel', onEnd, { passive: true });
+                // Touch
+                wrapper.addEventListener('touchstart', (e) => onStart(e.touches[0].clientX), { passive: true });
+                wrapper.addEventListener('touchmove', (e) => onMove(e.touches[0].clientX), { passive: true });
+                wrapper.addEventListener('touchend', onEnd, { passive: true });
+                wrapper.addEventListener('touchcancel', onEnd, { passive: true });
 
-    // Mouse (arraste no desktop)
-    wrapper.addEventListener('mousedown', (e) => { e.preventDefault(); onStart(e.clientX); });
-    window.addEventListener('mousemove', (e) => onMove(e.clientX));
-    window.addEventListener('mouseup', onEnd);
+                // Mouse (arraste no desktop)
+                wrapper.addEventListener('mousedown', (e) => { e.preventDefault(); onStart(e.clientX); });
+                window.addEventListener('mousemove', (e) => onMove(e.clientX));
+                window.addEventListener('mouseup', onEnd);
 
-    // ---- Teclado ----
-    wrapper.tabIndex = 0;
-    wrapper.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') next();
-      if (e.key === 'ArrowLeft') prev();
-    });
+                // ---- Teclado ----
+                wrapper.tabIndex = 0;
+                wrapper.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight') next();
+                    if (e.key === 'ArrowLeft') prev();
+                });
 
-    // ---- Init ----
-    updateDots();
-    goTo(0, false); // posiciona sem animação
-    startAutoplay();
+                // ---- Init ----
+                updateDots();
+                goTo(0, false); // posiciona sem animação
+                startAutoplay();
 
-    // Responsivo: reposiciona no resize
-    window.addEventListener('resize', () => goTo(index, false));
-  })();
-</script>
+                // Responsivo: reposiciona no resize
+                window.addEventListener('resize', () => goTo(index, false));
+            })();
+    </script>
 
     <!-- BLOG / ÚLTIMAS NOTÍCIAS -->
     <section id="blog" class="py-20 bg-white">
@@ -658,8 +669,7 @@
                 <div id="blogTrack"
                     class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-2 no-scrollbar">
                     <!-- Card 1 -->
-                    <a
-                        href="./artigos/com-a-estrategia-correta-pode-diminuir-o-valor-em-ate-90.html"
+                    <a href="./artigos/com-a-estrategia-correta-pode-diminuir-o-valor-em-ate-90.html"
                         class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
                         <div class="relative h-52">
                             <img src="https://plus.unsplash.com/premium_photo-1661497281000-b5ecb39a2114?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&fm=jpg&q=60&w=3000"
@@ -670,9 +680,12 @@
                             </span>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Com a estratégia correta, pode diminuir o valor em até 90%</h3>
+                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Com a estratégia correta, pode
+                                diminuir o valor em até 90%</h3>
                             <p class="text-gray-600">
-                                A regularização de INSS de obra é o processo de comprovar junto à Receita Federal/INSS que a construção civil (obra particular, comercial ou pública) está devidamente declarada, registrada e com as contribuições previdenciárias quitadas.
+                                A regularização de INSS de obra é o processo de comprovar junto à Receita Federal/INSS
+                                que a construção civil (obra particular, comercial ou pública) está devidamente
+                                declarada, registrada e com as contribuições previdenciárias quitadas.
                             </p>
                         </div>
                     </a>
@@ -680,10 +693,8 @@
                     <!-- Card 2 -->
                     <article
                         class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
-                        <a
-                            href="./artigos/usucapiao.html"
-                            class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden"
-                        >
+                        <a href="./artigos/usucapiao.html"
+                            class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
 
                             <div class="relative h-52">
                                 <img src="https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=774"
@@ -694,7 +705,8 @@
                                 </span>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Como regularizar seu imóvel e conquistar a escritura definitiva
+                                <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Como regularizar seu imóvel e
+                                    conquistar a escritura definitiva
                                 </h3>
                                 <p class="text-gray-600">
                                     Entenda o processo de usucapião e saiba como garantir a posse legal do seu imóvel.
@@ -707,10 +719,8 @@
                     <!-- Card 3 -->
                     <article
                         class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
-                        <a
-                            href="./artigos/aposentadoria-profissional-saude.html"
-                            class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden"
-                        >
+                        <a href="./artigos/aposentadoria-profissional-saude.html"
+                            class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
 
                             <div class="relative h-52">
                                 <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1932"
@@ -721,9 +731,11 @@
                                 </span>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Aposentadoria do Profissional da Saúde</h3>
+                                <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Aposentadoria do Profissional da
+                                    Saúde</h3>
                                 <p class="text-gray-600">
-                                    Regras especiais para médicos, enfermeiros, dentistas e outros profissionais da saúde.
+                                    Regras especiais para médicos, enfermeiros, dentistas e outros profissionais da
+                                    saúde.
                                 </p>
                             </div>
                         </a>
@@ -732,59 +744,25 @@
                     <!-- Card 4 -->
                     <article
                         class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
-                        <div class="relative h-52">
-                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop"
-                                alt="Direito Civil" class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-3 right-3 bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
-                                Direito Civil
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Inscrição indevida no Serasa</h3>
-                            <p class="text-gray-600">
-                                Quando cabe indenização por dano moral e como solicitar a retirada do seu nome.
-                            </p>
-                        </div>
-                    </article>
+                        <a href="./artigos/auxilio-acidente.html"
+                            class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
+                            <div class="relative h-52">
+                                <img src="https://images.unsplash.com/photo-1633158832532-f71e9c7ac6d6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740"
+                                    alt="Direito Civil" class="w-full h-full object-cover">
+                                <span
+                                    class="absolute top-3 right-3 bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
+                                    Auxílio
+                                </span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-extrabold text-slate-800 mb-3"> O que é o Auxílio-Acidente?
+                                </h3>
+                                <p class="text-gray-600">
+                                    O auxílio-acidente é um benefício indenizatório pago pelo INSS ao trabalhador que sofreu um acidente de qualquer natureza (de trabalho ou não) e ficou com sequelas permanentes que reduzem sua capacidade para o trabalho habitual.
+                                </p>
+                            </div>
+                        </a>
 
-                    <!-- Card 5 -->
-                    <article
-                        class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
-                        <div class="relative h-52">
-                            <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=1600&auto=format&fit=crop"
-                                alt="Direito do Consumidor" class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-3 right-3 bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
-                                Direito do Consumidor
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Passagem aérea cancelada</h3>
-                            <p class="text-gray-600">
-                                Reembolso, remarcação e seus direitos em atrasos e cancelamentos de voos.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Card 6 -->
-                    <article
-                        class="blog-card snap-start flex-none w-[85%] sm:w-[70%] md:w-[48%] lg:w-[32%] bg-white rounded-xl shadow-md overflow-hidden">
-                        <div class="relative h-52">
-                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop"
-                                alt="Direito Empresarial" class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-3 right-3 bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
-                                Direito Empresarial
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Contrato de prestação de serviços
-                            </h3>
-                            <p class="text-gray-600">
-                                Cláusulas essenciais para evitar riscos e litígios no seu negócio.
-                            </p>
-                        </div>
                     </article>
                 </div>
             </div>
